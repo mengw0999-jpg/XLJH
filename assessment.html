@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理评估 - 相愈计划</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>相愈计划</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">首页</a></li>
+                    <li><a href="chat.html" class="nav-link">心理辅导</a></li>
+                    <li><a href="resources.html" class="nav-link">资源库</a></li>
+                    <li><a href="assessment.html" class="nav-link active">心理评估</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 评估页面内容 -->
+    <section class="page">
+        <div class="container">
+            <h2>心理健康评估与报告</h2>
+            <p>选择适合您的心理评估问卷，了解自身心理状态</p>
+            
+            <!-- 问卷选择区域 -->
+            <div class="assessment-selection" id="assessment-selection">
+                <div class="section-title">
+                    <h2>选择评估问卷</h2>
+                    <p>根据您的需求选择合适的心理评估问卷</p>
+                </div>
+                
+                <div class="questionnaire-cards">
+                    <div class="questionnaire-card" data-type="general">
+                        <div class="questionnaire-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>心理健康综合评估</h3>
+                        <p>全面评估您的心理健康状况，涵盖情绪、压力、人际关系等多个方面</p>
+                        <div class="questionnaire-meta">
+                            <span><i class="fas fa-question-circle"></i> 10个问题</span>
+                            <span><i class="fas fa-clock"></i> 约5分钟</span>
+                        </div>
+                        <button class="btn select-questionnaire">开始评估</button>
+                    </div>
+                    
+                    <div class="questionnaire-card" data-type="anxiety">
+                        <div class="questionnaire-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>焦虑情绪评估</h3>
+                        <p>评估您的焦虑水平，了解焦虑对日常生活的影响程度</p>
+                        <div class="questionnaire-meta">
+                            <span><i class="fas fa-question-circle"></i> 7个问题</span>
+                            <span><i class="fas fa-clock"></i> 约3分钟</span>
+                        </div>
+                        <button class="btn select-questionnaire">开始评估</button>
+                    </div>
+                    
+                    <div class="questionnaire-card" data-type="depression">
+                        <div class="questionnaire-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>抑郁情绪评估</h3>
+                        <p>评估您的抑郁情绪水平，帮助识别可能的抑郁症状</p>
+                        <div class="questionnaire-meta">
+                            <span><i class="fas fa-question-circle"></i> 9个问题</span>
+                            <span><i class="fas fa-clock"></i> 约4分钟</span>
+                        </div>
+                        <button class="btn select-questionnaire">开始评估</button>
+                    </div>
+                    
+                    <div class="questionnaire-card" data-type="stress">
+                        <div class="questionnaire-icon">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+                        <h3>学习压力评估</h3>
+                        <p>评估您的学习压力水平，了解压力来源和应对能力</p>
+                        <div class="questionnaire-meta">
+                            <span><i class="fas fa-question-circle"></i> 8个问题</span>
+                            <span><i class="fas fa-clock"></i> 约4分钟</span>
+                        </div>
+                        <button class="btn select-questionnaire">开始评估</button>
+                    </div>
+                    
+                    <div class="questionnaire-card" data-type="social">
+                        <div class="questionnaire-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>社交能力评估</h3>
+                        <p>评估您的社交能力和人际关系状况，了解社交互动模式</p>
+                        <div class="questionnaire-meta">
+                            <span><i class="fas fa-question-circle"></i> 6个问题</span>
+                            <span><i class="fas fa-clock"></i> 约3分钟</span>
+                        </div>
+                        <button class="btn select-questionnaire">开始评估</button>
+                    </div>
+                    
+                    <div class="questionnaire-card" data-type="selfesteem">
+                        <div class="questionnaire-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>自尊水平评估</h3>
+                        <p>评估您的自尊水平和自我价值感，了解自我认知状况</p>
+                        <div class="questionnaire-meta">
+                            <span><i class="fas fa-question-circle"></i> 7个问题</span>
+                            <span><i class="fas fa-clock"></i> 约3分钟</span>
+                        </div>
+                        <button class="btn select-questionnaire">开始评估</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 评估进行区域 -->
+            <div class="assessment-container" id="assessment-container" style="display: none;">
+                <div class="assessment-header">
+                    <h3 id="current-questionnaire-title">心理健康综合评估</h3>
+                    <p id="current-questionnaire-description">全面评估您的心理健康状况</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-bar"></div>
+                    </div>
+                    <div class="progress-text" id="progress-text">问题 1/10</div>
+                </div>
+                
+                <div class="questions-container" id="questions-container">
+                    <!-- 问题将通过JavaScript动态生成 -->
+                </div>
+                
+                <div class="assessment-controls">
+                    <button class="btn btn-secondary" id="prev-question" style="display: none;">上一题</button>
+                    <button class="btn" id="next-question">下一题</button>
+                    <button class="btn" id="submit-assessment" style="display: none;">提交评估</button>
+                </div>
+            </div>
+            
+            <!-- 评估结果区域 -->
+            <div class="assessment-result" id="assessment-result" style="display: none;">
+                <div class="result-header">
+                    <div class="result-score" id="result-score">78</div>
+                    <h3 id="result-title">你的心理健康状况良好</h3>
+                    <p class="result-description" id="result-description">你在大部分方面表现良好，但在压力管理和目标设定方面还有提升空间。</p>
+                </div>
+                
+                <div class="result-details">
+                    <h3>详细分析</h3>
+                    <div class="result-chart" id="result-chart">
+                        <!-- 图表将通过JavaScript生成 -->
+                    </div>
+                    <div class="dimension-scores" id="dimension-scores">
+                        <!-- 维度分数将通过JavaScript生成 -->
+                    </div>
+                </div>
+                
+                <h3 style="margin-bottom: 20px;">个性化建议</h3>
+                <div class="recommendations" id="recommendations">
+                    <!-- 建议将通过JavaScript生成 -->
+                </div>
+                
+                <div class="result-actions">
+                    <button class="btn" id="save-report">保存报告</button>
+                    <button class="btn btn-secondary" id="new-assessment">新的评估</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>相愈计划</h3>
+                    <p>专为中小学生设计的心理健康平台，提供专业的心理支持和成长指导。</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="chat.html">心理辅导</a></li>
+                        <li><a href="resources.html">资源库</a></li>
+                        <li><a href="assessment.html">心理评估</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> contact@xiangyujihua.com</li>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村大街</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 相愈计划心理健康平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/assessment.js"></script>
+</body>
+</html>

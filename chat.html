@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理辅导 - 相愈计划</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>相愈计划</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">首页</a></li>
+                    <li><a href="chat.html" class="nav-link active">心理辅导</a></li>
+                    <li><a href="resources.html" class="nav-link">资源库</a></li>
+                    <li><a href="assessment.html" class="nav-link">心理评估</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 心理辅导页面内容 -->
+    <section class="page">
+        <div class="container">
+            <h2>个性化心理辅导</h2>
+            <p>随时与心理辅导助手对话，获取心理支持和建议</p>
+            
+            <!-- 聊天历史侧边栏和主内容区 -->
+            <div class="chat-layout">
+                <!-- 聊天历史侧边栏 -->
+                <div class="chat-sidebar" id="chat-sidebar">
+                    <div class="sidebar-header">
+                        <h3>聊天历史</h3>
+                        <button class="btn btn-small" id="new-chat-btn">
+                            <i class="fas fa-plus"></i> 新对话
+                        </button>
+                    </div>
+                    <div class="chat-history-list" id="chat-history-list">
+                        <!-- 聊天历史项将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+                
+                <!-- 主聊天区域 -->
+                <div class="chat-main">
+                    <!-- API配置区域 -->
+                    <div class="api-config" id="api-config">
+                        <h3>API配置</h3>
+                        <div class="config-form">
+                            <div class="form-group">
+                                <label for="api-key">DeepSeek API密钥:</label>
+                                <input type="password" id="api-key" placeholder="请输入您的DeepSeek API密钥">
+                            </div>
+                            <div class="form-group">
+                                <label for="api-url">API地址 (可选):</label>
+                                <input type="text" id="api-url" placeholder="https://api.deepseek.com/v1/chat/completions" value="https://api.deepseek.com/v1/chat/completions">
+                            </div>
+                            <button id="save-config" class="btn">保存配置</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <h3 id="current-chat-title">心理辅导助手</h3>
+                            <p>随时为您提供心理支持</p>
+                        </div>
+                        
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message ai-message">
+                                你好！我是你的心理辅导助手。今天有什么想聊的吗？无论是学习压力、人际关系还是情绪问题，我都很乐意帮助你。
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input">
+                            <input type="text" id="message-input" placeholder="输入你的问题或感受...">
+                            <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- 加载状态指示器 -->
+                    <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>心理助手正在思考...</span>
+                    </div>
+                    
+                    <div class="feature-card" style="margin-top: 30px;">
+                        <h3>个性化心理健康方案</h3>
+                        <p>根据你的具体情况，提供个性化的心理健康改善方案，包括情绪管理、压力缓解、社交技巧等方面的指导。</p>
+                        <a href="#" class="btn" style="margin-top: 15px;">获取我的方案</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>相愈计划</h3>
+                    <p>专为中小学生设计的心理健康平台，提供专业的心理支持和成长指导。</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="chat.html">心理辅导</a></li>
+                        <li><a href="resources.html">资源库</a></li>
+                        <li><a href="assessment.html">心理评估</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> contact@xiangyujihua.com</li>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村大街</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 相愈计划心理健康平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 调试按钮 -->
+    <button class="debug-toggle" id="debug-toggle">
+        <i class="fas fa-bug"></i>
+    </button>
+
+    <div class="connection-status" id="connection-status" style="display: none;">
+        连接状态
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
